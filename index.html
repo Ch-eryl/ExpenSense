@@ -1,0 +1,35 @@
+<html>
+
+<head>
+<title>ExpenSense</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<h1>ExpenSense</h1>
+<p>Upload your transactions and discover your spending personality.</p>
+
+<form method="POST" enctype="multipart/form-data">
+<input type="file" name="file">
+<button type="submit">Analyze</button>
+</form>
+
+{% if result %}
+
+<div class="results">
+
+<h2>Your Results</h2>
+
+<p><b>Spending Personality:</b> {{result.personality}}</p>
+<p><b>Monthly Burn Rate:</b> ${{result.burn}}</p>
+<p><b>Savings Rate:</b> {{result.savings}}%</p>
+<p><b>Advice:</b> {{result.advice}}</p>
+
+</div>
+
+{% endif %}
+
+</body>
+
+</html>
